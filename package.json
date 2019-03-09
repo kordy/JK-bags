@@ -1,0 +1,31 @@
+{
+  "name": "jk-bags",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-stylus": "^1.0.1",
+    "async": "2.1.4",
+    "axios": "^0.18.0",
+    "dotenv": "4.0.0",
+    "keystone": "4.0.0-beta.5",
+    "less": "^3.9.0",
+    "lodash": "^4.13.1",
+    "next": "^7.0.3",
+    "numeral": "^2.0.6",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "stylus": "^0.54.5",
+    "twig": "0.10.3"
+  },
+  "devDependencies": {
+    "eslint": "3.15.0",
+    "eslint-config-keystone": "3.0.0",
+    "eslint-plugin-react": "^5.1.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node keystone.js",
+    "compile": "stylus -w public/styles/site.styl -o public/styles/site.css"
+  }
+}
