@@ -18,6 +18,7 @@ keystone.init({
 	'brand': 'JK bags',
 	'auto update': true,
 	'session': true,
+	'session store': 'mongo',
 	'auth': true,
 	'user model': 'User',
 });
@@ -35,6 +36,7 @@ app.prepare()
 		// Configure the navigation bar in Keystone's Admin UI
 		keystone.set('nav', {
 			products: ['products', 'product-categories'],
+			pages: ['pages'],
 			users: 'users',
 		});
 

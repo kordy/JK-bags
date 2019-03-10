@@ -8,28 +8,24 @@ import Title from '@components/shared/title/title';
 
 class App extends Component {
 	
-	static async getInitialProps() {
+	static async getInitialProps({ pathname, query }) {
 		let response = await fetchProducts();
 		return {
-			products: response.data
+			products: response.data,
+			pageData: (query && query.pageData) || {}
 		};
 	}
 	
 	render() {
+		const { products, pageData } = this.props;
 		return (
 			<>
 				<Head>
 					<title>Julia Bags</title>
 				</Head>
 				<Layout>
-					<div className="jkb-text-block">
-						<h1>Добрый день!!!</h1>
-						<p>Блаблабла бла бла блабла бла</p>
-						<p>Блаблабла бла бла блабла бла</p>
-						<p>Блаблабла бла бла блабла бла</p>
-						<p>Блаблабла бла бла блабла бла</p>
-					</div>
-					<Title>Коллекция работ</Title>
+					<div dangerouslySetInnerHTML={{ __html: pageData.content }} className="jkb-text-block" />
+					<Title>{ pageData.title }</Title>
 					<ProductList
 						products={this.props.products}
 					/>
